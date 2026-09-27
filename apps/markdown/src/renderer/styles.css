@@ -916,6 +916,33 @@ html.genoffice-popover-open .ribbon-tabs {
 }
 
 .copilot {
+  /* AI chat panel: dark override, scoped to this panel only */
+  --surface: #000000;
+  --surface-subtle: #1a1a1a;
+  --bg-content: #000000;
+  --text: #ffffff;
+  --text-secondary: #cfcfcf;
+  --text-tertiary: #9a9a9a;
+  --text-muted: #9a9a9a;
+  --border: #333333;
+  --border-subtle: #2a2a2a;
+  --border-strong: #444444;
+  --hover: #262626;
+  --bg-hover: #262626;
+  --bg-hover-subtle: #262626;
+  --color-bg-page: #000000;
+  --color-bg-subtle: #1a1a1a;
+  --color-text-primary: #ffffff;
+  --color-text-secondary: #cfcfcf;
+  --color-text-tertiary: #9a9a9a;
+  --color-border-default: #333333;
+  --color-border-strong: #444444;
+  /* DOS-terminal look: overriding the --gs-font-sans variable (rather than
+     a literal font-family) means every nested element that also declares
+     `font-family: var(--gs-font-sans)` picks this up too, not just this
+     rule's own (later, otherwise-winning) font-family line */
+  --gs-font-sans: 'Consolas', 'Lucida Console', 'Courier New', monospace;
+
   position: relative;
   display: flex;
   flex-direction: column;

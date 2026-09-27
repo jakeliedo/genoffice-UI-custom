@@ -2,9 +2,9 @@
  * Chrome tokens (surface/text/border/…, AI panel --color-*) come from
  * @genoffice/ui/tokens.css; nothing here may shadow those names. */
 :root {
-  --excel-green: #217346;
-  --excel-green-dark: #185c37;
-  --excel-green-soft: #e9f3ed;
+  --excel-green: #d67aa3;
+  --excel-green-dark: #b85c85;
+  --excel-green-soft: #fbeaf1;
   --accent: var(--excel-green);
   --accent-dark: var(--excel-green-dark);
   --accent-soft: var(--excel-green-soft);
@@ -47,7 +47,7 @@
   /* content-side constants: charts, shapes and their selection chrome sit on
    * the paper-like grid and never follow the theme */
   --sheets-paper: #ffffff;
-  --sheets-on-accent: #ffffff;
+  --sheets-on-accent: #2b2b2d;
   --sheets-knob-dot: #ffffff;
   --sheets-chart-border: #c9cdd1;
   --sheets-chart-ink: #333;
@@ -76,7 +76,7 @@
   --sheets-toast-error-bg: rgb(196 49 75 / 95%);
   --sheets-toast-ink: #fff;
   --sheets-toast-ok: #34c759;
-  --sheets-on-accent-hover: rgb(255 255 255 / 22%);
+  --sheets-on-accent-hover: rgb(0 0 0 / 12%);
   --sheets-mask-bg: rgb(0 0 0 / 50%);
   --sheets-mask-bg-strong: rgb(0 0 0 / 50%);
   --sheets-shadow-drop: 0 6px 20px rgb(0 0 0 / 14%), 0 1px 3px rgb(0 0 0 / 8%);
@@ -104,9 +104,9 @@
 }
 
 [data-theme='dark'] {
-  --accent: #34a853;
-  --accent-dark: #58b380;
-  --accent-soft: #1d3328;
+  --accent: #e6a9c7;
+  --accent-dark: #d67aa3;
+  --accent-soft: #3a2430;
   --surface-hover: #333;
   --ribbon-hover: #333;
   --ribbon-active: #454545;
@@ -136,9 +136,9 @@
 
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme='light']):not([data-theme='dark']) {
-    --accent: #34a853;
-    --accent-dark: #58b380;
-    --accent-soft: #1d3328;
+    --accent: #e6a9c7;
+    --accent-dark: #d67aa3;
+    --accent-soft: #3a2430;
     --surface-hover: #333;
     --ribbon-hover: #333;
     --ribbon-active: #454545;
@@ -1803,6 +1803,33 @@ button.check-item:hover {
 }
 
 .copilot {
+  /* AI chat panel: dark override, scoped to this panel only */
+  --surface: #000000;
+  --surface-subtle: #1a1a1a;
+  --bg-content: #000000;
+  --text: #ffffff;
+  --text-secondary: #cfcfcf;
+  --text-tertiary: #9a9a9a;
+  --text-muted: #9a9a9a;
+  --border: #333333;
+  --border-subtle: #2a2a2a;
+  --border-strong: #444444;
+  --hover: #262626;
+  --bg-hover: #262626;
+  --bg-hover-subtle: #262626;
+  --color-bg-page: #000000;
+  --color-bg-subtle: #1a1a1a;
+  --color-text-primary: #ffffff;
+  --color-text-secondary: #cfcfcf;
+  --color-text-tertiary: #9a9a9a;
+  --color-border-default: #333333;
+  --color-border-strong: #444444;
+  /* DOS-terminal look: overriding the --gs-font-sans variable (rather than
+     a literal font-family) means every nested element that also declares
+     `font-family: var(--gs-font-sans)` picks this up too, not just this
+     rule's own (later, otherwise-winning) font-family line */
+  --gs-font-sans: 'Consolas', 'Lucida Console', 'Courier New', monospace;
+
   position: relative;
   display: flex;
   flex-direction: column;

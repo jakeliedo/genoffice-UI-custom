@@ -65,9 +65,9 @@
  * Chrome tokens (surface/text/border/…, AI panel --color-*) come from
  * @genoffice/ui/tokens.css; nothing here may shadow those names. */
 :root {
-  --accent: #c43e1c;
-  --accent-dark: #a33517;
-  --accent-soft: #fbeae5;
+  --accent: #b8860b;
+  --accent-dark: #96690a;
+  --accent-soft: #fbf0d9;
 
   /* slides-local chrome shades */
   --slides-statusbar-bg: #f3f4f6;
@@ -113,16 +113,16 @@
   --slides-anim-exit: #c43e1c;
   --slides-anim-path: #2b7cd3;
   --slides-anim-media: #7a5cc4;
-  --slides-choice-check: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12'><path d='M2.5 6.5l2.5 2.5 4.5-5' fill='none' stroke='white' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'/></svg>");
+  --slides-choice-check: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12'><path d='M2.5 6.5l2.5 2.5 4.5-5' fill='none' stroke='%232b2416' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'/></svg>");
 
   /* content-side constants: thumbnails/sorter/master previews and layout
    * placeholders are paper; grid/guide/crop/laser overlays draw on the slide
    * itself — none of these follow the theme */
   --slides-paper: #fff;
-  --slides-on-accent: #fff;
-  --slides-on-accent-border: rgb(255 255 255 / 60%);
-  --slides-on-accent-bg: rgb(255 255 255 / 12%);
-  --slides-on-accent-hover: rgb(255 255 255 / 25%);
+  --slides-on-accent: #2b2416;
+  --slides-on-accent-border: rgb(0 0 0 / 45%);
+  --slides-on-accent-bg: rgb(0 0 0 / 8%);
+  --slides-on-accent-hover: rgb(0 0 0 / 15%);
   --slides-knob-dot: #fff;
   --slides-badge-ink: #fff;
   --slides-badge-bg: rgb(0 0 0 / 45%);
@@ -202,9 +202,9 @@
 }
 
 [data-theme='dark'] {
-  --accent: #e8663f;
-  --accent-dark: #d4552f;
-  --accent-soft: #43261d;
+  --accent: #e0af2e;
+  --accent-dark: #b8860b;
+  --accent-soft: #4a3a15;
   --slides-statusbar-bg: #252525;
   --slides-rail-bg: #252525;
   --slides-statusbar-border: #3a3a3a;
@@ -251,9 +251,9 @@
 
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme='light']):not([data-theme='dark']) {
-    --accent: #e8663f;
-    --accent-dark: #d4552f;
-    --accent-soft: #43261d;
+    --accent: #e0af2e;
+    --accent-dark: #b8860b;
+    --accent-soft: #4a3a15;
     --slides-statusbar-bg: #252525;
     --slides-rail-bg: #252525;
     --slides-statusbar-border: #3a3a3a;
@@ -1527,6 +1527,33 @@ body.vib .slide-list {
 /* ================= AI panel (Copilot-style pane, isomorphic to docs) ================= */
 
 .ai-panel {
+  /* AI chat panel: dark override, scoped to this panel only */
+  --surface: #000000;
+  --surface-subtle: #1a1a1a;
+  --bg-content: #000000;
+  --text: #ffffff;
+  --text-secondary: #cfcfcf;
+  --text-tertiary: #9a9a9a;
+  --text-muted: #9a9a9a;
+  --border: #333333;
+  --border-subtle: #2a2a2a;
+  --border-strong: #444444;
+  --hover: #262626;
+  --bg-hover: #262626;
+  --bg-hover-subtle: #262626;
+  --color-bg-page: #000000;
+  --color-bg-subtle: #1a1a1a;
+  --color-text-primary: #ffffff;
+  --color-text-secondary: #cfcfcf;
+  --color-text-tertiary: #9a9a9a;
+  --color-border-default: #333333;
+  --color-border-strong: #444444;
+  /* DOS-terminal look: overriding the --gs-font-sans variable (rather than
+     a literal font-family) means every nested element that also declares
+     `font-family: var(--gs-font-sans)` picks this up too, not just this
+     rule's own (later, otherwise-winning) font-family line */
+  --gs-font-sans: 'Consolas', 'Lucida Console', 'Courier New', monospace;
+
   position: relative;
   width: 360px;
   flex-shrink: 0;
