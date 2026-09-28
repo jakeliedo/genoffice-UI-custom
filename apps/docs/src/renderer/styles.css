@@ -7418,7 +7418,7 @@ body.docs-crop-active
 .ai-msg {
   position: relative;
   margin: 0;
-  font-size: 16px;
+  font-size: 14px;
   line-height: 1.6;
   white-space: pre-wrap;
   word-break: break-word;
@@ -8581,9 +8581,9 @@ body.docs-crop-active
    * with the content, so clipped lines would sit flush against chips/footer */
   padding: 0 14px;
   margin: 12px 0 4px;
-  font-size: 16px;
+  font-size: 14px;
   font-family: inherit;
-  line-height: 24px;
+  line-height: 20px;
   outline: none;
   color: var(--color-text-primary);
   min-height: 48px;
